@@ -1,0 +1,7 @@
+add_tutorial_executable(01_overhead_test 01_overhead_test.cpp)
+add_tutorial_executable(02_atomic_vs_int 02_atomic_vs_int.cpp)
+add_tutorial_executable(03_volatile_mistake 03_volatile_mistake.cpp)
+add_tutorial_executable(04_atomic_flag_spinlock 04_atomic_flag_spinlock.cpp)
+add_tutorial_executable(05_cas_loop_multiply 05_cas_loop_multiply.cpp)
+add_tutorial_executable(06_atomic_contention 06_atomic_contention.cpp)
+add_tutorial_executable(07_false_sharing_demo 07_false_sharing_demo.cpp)

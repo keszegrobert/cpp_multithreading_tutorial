@@ -1,0 +1,6 @@
+add_tutorial_executable(01_mutex_example 01_mutex_example.cpp)
+add_tutorial_executable(02_deadlock_example 02_deadlock_example.cpp)
+add_tutorial_executable(03_reader_writer_bench 03_reader_writer_bench.cpp)
+add_tutorial_executable(04_call_once_demo 04_call_once_demo.cpp)
+add_tutorial_executable(05_promise_demo 05_promise_demo.cpp)
+add_tutorial_executable(06_exception_propagation 06_exception_propagation.cpp)

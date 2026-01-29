@@ -1,0 +1,6 @@
+add_tutorial_executable(01_spinlock_vs_sleep 01_spinlock_vs_sleep.cpp)
+add_tutorial_executable(02_sleep_precision 02_sleep_precision.cpp)
+add_tutorial_executable(03_cv_basics 03_cv_basics.cpp)
+add_tutorial_executable(04_semaphore_impl 04_semaphore_impl.cpp)
+add_tutorial_executable(05_producer_consumer 05_producer_consumer.cpp)
+add_tutorial_executable(06_barrier_example 06_barrier_example.cpp)

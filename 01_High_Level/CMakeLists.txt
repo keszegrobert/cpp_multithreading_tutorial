@@ -1,0 +1,8 @@
+add_tutorial_executable(01_execution_policies 01_execution_policies.cpp)
+add_tutorial_executable(02_parallel_foreach 02_parallel_foreach.cpp)
+add_tutorial_executable(03_parallel_sort_find 03_parallel_sort_find.cpp)
+add_tutorial_executable(04_parallel_reduce 04_parallel_reduce.cpp)
+add_tutorial_executable(05_parallel_scan_transform 05_parallel_scan_transform.cpp)
+add_tutorial_executable(06_basic_async 06_basic_async.cpp)
+add_tutorial_executable(07_launch_policies 07_launch_policies.cpp)
+add_tutorial_executable(08_data_race_example 08_data_race_example.cpp)

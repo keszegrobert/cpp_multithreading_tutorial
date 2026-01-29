@@ -1,0 +1,68 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 15,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "default",
+      "displayName": "Default Config (Apple Clang)",
+      "description": "Default build using system compiler (skips C++17 parallel examples)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    },
+    {
+      "name": "gcc",
+      "displayName": "GCC Config",
+      "description": "Build using GCC (g++-15) - Fixes _bounds.h issue on macOS",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build_gcc",
+      "environment": {
+        "CXX": "/opt/homebrew/bin/g++-15",
+        "LDFLAGS": "-L/opt/homebrew/lib",
+        "CPPFLAGS": "-I/opt/homebrew/include"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+        "CMAKE_OSX_SYSROOT": ""
+      }
+    },
+    {
+      "name": "llvm",
+      "displayName": "LLVM Clang Config",
+      "description": "Build using Homebrew LLVM (requires brew install llvm)",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build_llvm",
+      "environment": {
+        "CXX": "/opt/homebrew/opt/llvm/bin/clang++",
+        "LDFLAGS": "-L/opt/homebrew/opt/llvm/lib -Wl,-rpath,/opt/homebrew/opt/llvm/lib",
+        "CPPFLAGS": "-I/opt/homebrew/opt/llvm/include"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "default",
+      "configurePreset": "default"
+    },
+    {
+      "name": "gcc",
+      "configurePreset": "gcc"
+    },
+    {
+      "name": "llvm",
+      "configurePreset": "llvm"
+    }
+  ]
+}
