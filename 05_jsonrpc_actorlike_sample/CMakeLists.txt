@@ -1,0 +1,5 @@
+add_tutorial_executable(01_jsonrpc_client 01_jsonrpc_client.cpp)
+target_link_libraries(01_jsonrpc_client PRIVATE nlohmann_json::nlohmann_json)
+
+add_tutorial_executable(01_jsonrpc_server 01_jsonrpc_server.cpp)
+target_link_libraries(01_jsonrpc_server PRIVATE nlohmann_json::nlohmann_json)

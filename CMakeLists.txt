@@ -87,6 +87,18 @@ if(NOT HAS_CXX17_PARALLEL_ALGORITHMS)
     -----------------------------------------------------------------------")
 endif()
 
+# JSON library setup
+find_package(nlohmann_json QUIET)
+if(NOT nlohmann_json_FOUND)
+    message(STATUS "nlohmann_json not found, fetching from GitHub...")
+    include(FetchContent)
+    FetchContent_Declare(
+        json
+        URL https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz
+    )
+    FetchContent_MakeAvailable(json)
+endif()
+
 # Segédfüggvény a targetek egyszerűbb hozzáadásához
 function(add_tutorial_executable name source_file)
     add_executable(${name} ${source_file})
@@ -115,3 +127,4 @@ add_subdirectory(03_Low_Level)
 
 # 4. Hardver és Optimalizáció (Hardware & Optimization)
 add_subdirectory(04_Hardware_and_Optimization)
+add_subdirectory(05_jsonrpc_actorlike_sample)
